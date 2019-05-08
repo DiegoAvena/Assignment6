@@ -4,6 +4,8 @@
 #include "FileInputManager.h"
 #include "BubbleSortManager.h"
 #include "InsertionSortManager.h"
+#include "QuickSortManager.h"
+
 #include <iostream>
 
 class SortingMachine {

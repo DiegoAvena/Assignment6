@@ -38,7 +38,7 @@ protected:
 
   }
 
-  void copyArray(dataType* arrayOfItemsToCopy, int sizeOfArrayOfItemsToCopy) {
+  dataType* copyArray(dataType* arrayOfItemsToCopy, int sizeOfArrayOfItemsToCopy) {
 
     arrayOfItems = new dataType[sizeOfArrayOfItemsToCopy];
 
@@ -47,6 +47,8 @@ protected:
       arrayOfItems[i] = arrayOfItemsToCopy[i];
 
     }
+
+    return arrayOfItems;
 
   }
 
