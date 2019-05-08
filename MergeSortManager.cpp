@@ -74,6 +74,9 @@ void MergeSortManager::mergeSort(double* arrayOfItemsToSort, int sizeOfArrayOfIt
 
     merge(arrayOfItemsToSort, sizeOfArrayOfItemsToSort, leftArray, sizeOfLeftArray, rightArray, sizeOfRightArray);
 
+    delete[] leftArray;
+    delete[] rightArray;
+    
   }
 
 }
