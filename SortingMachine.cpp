@@ -46,7 +46,8 @@ SortingMachine::SortingMachine(string fileName) {
   insertionSorter.insertionSort(arrayOfItemsToSort, numberOfItemsToSort);
 
   QuickSortManager quickSorter(arrayOfItemsToSort, numberOfItemsToSort);
-
+  MergeSortManager mergeSorter(arrayOfItemsToSort, numberOfItemsToSort);
+  
 }
 
 //Destructor, used to delete the unsorted array that was allocated at the start:

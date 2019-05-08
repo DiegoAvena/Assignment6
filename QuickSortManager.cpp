@@ -8,7 +8,8 @@ QuickSortManager::QuickSortManager() {
 QuickSortManager::QuickSortManager(double* arrayOfItemsToCopyAndSort, int sizeOfArrayOfItemsToSort) {
 
   copyArray(arrayOfItemsToCopyAndSort, sizeOfArrayOfItemsToSort);
-  cout<<"Quick-Sort"<<endl;
+  cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+  cout<<"QUICK-SORT"<<endl;
 
   float startingTime = ((float)clock()) / CLOCKS_PER_SEC;
   cout<<"Time sort started at: "<<startingTime<<"s."<<endl;
@@ -18,7 +19,7 @@ QuickSortManager::QuickSortManager(double* arrayOfItemsToCopyAndSort, int sizeOf
   float endingTime = ((float)clock()) / CLOCKS_PER_SEC;
   cout<<"Time sort ended at: "<<endingTime<<"s"<<endl;
 
-  float timeTaken = endingTime = startingTime;
+  float timeTaken = endingTime - startingTime;
   cout<<"Time sort took is: "<<timeTaken<<"s."<<endl;
   cout<<"The sorted array is: "<<endl;
   printArray(sizeOfArrayOfItemsToSort);

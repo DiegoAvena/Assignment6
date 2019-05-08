@@ -5,6 +5,7 @@
 #include "BubbleSortManager.h"
 #include "InsertionSortManager.h"
 #include "QuickSortManager.h"
+#include "MergeSortManager.h"
 
 #include <iostream>
 
