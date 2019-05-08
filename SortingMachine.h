@@ -3,6 +3,7 @@
 
 #include "FileInputManager.h"
 #include "BubbleSortManager.h"
+#include "InsertionSortManager.h"
 #include <iostream>
 
 class SortingMachine {

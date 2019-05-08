@@ -29,8 +29,21 @@ SortingMachine::SortingMachine(string fileName) {
 
   inputManager.readFile(fileName, *this);
 
-  BubbleSortManager<double> bubbleSorter;
+  cout<<"Array prior to any insortion is: "<<endl;
+
+  for (int i = 0; i < numberOfItemsToSort; i++) {
+
+    cout<<arrayOfItemsToSort[i];
+
+  }
+  cout<<endl;
+  cout<<endl;
+
+  BubbleSortManager bubbleSorter;
   bubbleSorter.bubbleSort(arrayOfItemsToSort, numberOfItemsToSort);
+
+  InsertionSortManager insertionSorter;
+  insertionSorter.insertionSort(arrayOfItemsToSort, numberOfItemsToSort);
 
 }
 
