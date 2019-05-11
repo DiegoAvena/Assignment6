@@ -13,7 +13,7 @@ InsertionSortManager::~InsertionSortManager() {
 void InsertionSortManager::insertionSort(double* arrayOfItemsToCopyAndSort, int sizeOfArrayOfItemsToSort) {
 
   copyArray(arrayOfItemsToCopyAndSort, sizeOfArrayOfItemsToSort);
-  
+
   cout<<"----------------------------------------------------------------------------------------------------"<<endl;
   cout<<"INSERTION SORT"<<std::endl;
 
@@ -46,7 +46,7 @@ void InsertionSortManager::insertionSort(double* arrayOfItemsToCopyAndSort, int 
     /*
 
     -By this point we are at the correct spot to insert the value at in the array:
-    do j + 1 because j will always be 1 less then the actual spot this value should be inserted at due to line 44
+    do j + 1 because j will always be 1 less then the actual spot this value should be inserted at due to doing j--
 
     */
     arrayOfItems[j + 1] = currentValueToInsertIntoCorrectSpot;

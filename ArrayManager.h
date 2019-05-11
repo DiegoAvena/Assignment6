@@ -32,7 +32,7 @@ protected:
 
     for (int i = 0; i < sizeOfArrayOfItems; i++) {
 
-      std::cout<<arrayOfItems[i];
+      std::cout<<arrayOfItems[i]<<" ";
 
     }
 

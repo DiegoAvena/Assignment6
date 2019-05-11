@@ -27,13 +27,14 @@ public:
   }
 
   //reads from the specified file and if it does not exist, tells the user that the file could not be opened
-  void readFile(std::string fileName, dataType& objectToBuildUsingTheTextFile) {
+  bool readFile(std::string fileName, dataType& objectToBuildUsingTheTextFile) {
 
     std::ifstream fileToReadFrom(fileName);
 
     if (fileToReadFrom.is_open()) {
       //the file sucessfully opened:
 
+      std::cout<<"FILE OPENED..."<<std::endl;
       std::string line;
 
       while (getline(fileToReadFrom, line)) {
@@ -44,13 +45,15 @@ public:
       }
 
       fileToReadFrom.close();
+      return true;
 
     }
     else {
 
       //file could not be opened because it did not exist
       std::cout<<"Sorry, but there is no file with data to sort, exiting..."<<std::endl;
-
+      return false;
+      
     }
 
   }

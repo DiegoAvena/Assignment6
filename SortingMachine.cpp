@@ -27,13 +27,17 @@ SortingMachine::SortingMachine(string fileName) {
 
   FileInputManager<SortingMachine> inputManager;
 
-  inputManager.readFile(fileName, *this);
+  if (inputManager.readFile(fileName, *this) == false) {
+
+    return;
+
+  }
 
   cout<<"Array prior to any insortion is: "<<endl;
 
   for (int i = 0; i < numberOfItemsToSort; i++) {
 
-    cout<<arrayOfItemsToSort[i];
+    cout<<arrayOfItemsToSort[i]<<" ";
 
   }
   cout<<endl;
@@ -47,7 +51,7 @@ SortingMachine::SortingMachine(string fileName) {
 
   QuickSortManager quickSorter(arrayOfItemsToSort, numberOfItemsToSort);
   MergeSortManager mergeSorter(arrayOfItemsToSort, numberOfItemsToSort);
-  
+
 }
 
 //Destructor, used to delete the unsorted array that was allocated at the start:
