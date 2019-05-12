@@ -8,10 +8,11 @@
 class FileGenerator {
 
 public:
-  FileGenerator();
+  FileGenerator(); //constructor
   ~FileGenerator();
   void generateUnsortedDataFile(std::string fileName);
   void generateDescendingOrderDataFile(std::string fileName);
+  void generateSortedDataFile(std::string fileName);
 
 };
 

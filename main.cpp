@@ -18,7 +18,7 @@ int main(int argc, char const *argv[]) {
     //FileGenerator fileGenerator;
     //fileGenerator.generateUnsortedDataFile(argv[1]);
     //fileGenerator.generateDescendingOrderDataFile(argv[1]);
-
+    //fileGenerator.generateSortedDataFile(argv[1]);
   }
   else {
 
