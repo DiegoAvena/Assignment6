@@ -1,30 +1,36 @@
 #include "MergeSortManager.h"
 using namespace std;
 
+//default constructor
 MergeSortManager::MergeSortManager() {
-
-
 
 }
 
+/*
+
+-overloaded constructor, creates copy of array of items to sort with help
+of ArrayManager and sorts with the mergeSort algorithm
+
+*/
 MergeSortManager::MergeSortManager(double* arrayOfItemsToSort, int sizeOfArrayOfItemsToSort) {
 
-  copyArray(arrayOfItemsToSort, sizeOfArrayOfItemsToSort);
+  copyArray(arrayOfItemsToSort, sizeOfArrayOfItemsToSort); //create a copy of the array
 
   cout<<"----------------------------------------------------------------------------------------------------"<<endl;
   cout<<"MERGE-SORT"<<endl;
 
-  float startingTime = ((float)clock()) / CLOCKS_PER_SEC;
+  float startingTime = ((float)clock()) / CLOCKS_PER_SEC; //record the starting time
   cout<<"Time sort started at: "<<startingTime<<"s."<<endl;
 
-  mergeSort(arrayOfItems, sizeOfArrayOfItemsToSort);
+  mergeSort(arrayOfItems, sizeOfArrayOfItemsToSort); //start merge sort
 
-  float endingTime = ((float)clock()) / CLOCKS_PER_SEC;
+  float endingTime = ((float)clock()) / CLOCKS_PER_SEC; //record end time
   cout<<"Time sort ended at: "<<endingTime<<"s"<<endl;
 
-  float timeTaken = endingTime - startingTime;
+  float timeTaken = endingTime - startingTime; //record amount of time taken
   cout<<"Time sort took is: "<<timeTaken<<"s."<<endl;
 
+  //report results:
   cout<<"The sorted array is: "<<endl;
   printArray(sizeOfArrayOfItemsToSort);
 
@@ -33,12 +39,12 @@ MergeSortManager::MergeSortManager(double* arrayOfItemsToSort, int sizeOfArrayOf
 
 }
 
+//destructor
 MergeSortManager::~MergeSortManager() {
-
-
 
 }
 
+//contains the merge sort algorithm, does a merge sort to sort an array of items from least to greatest: referenced the list based implementation on page 510 of course book
 void MergeSortManager::mergeSort(double* arrayOfItemsToSort, int sizeOfArrayOfItemsToSort) {
 
   if (sizeOfArrayOfItemsToSort > 1) {
@@ -69,18 +75,20 @@ void MergeSortManager::mergeSort(double* arrayOfItemsToSort, int sizeOfArrayOfIt
 
     }
 
-    mergeSort(leftArray, sizeOfLeftArray);
-    mergeSort(rightArray, sizeOfRightArray);
+    mergeSort(leftArray, sizeOfLeftArray); //perform merge sort on left sub array
+    mergeSort(rightArray, sizeOfRightArray); //perform merge sort on right sub array
 
-    merge(arrayOfItemsToSort, sizeOfArrayOfItemsToSort, leftArray, sizeOfLeftArray, rightArray, sizeOfRightArray);
+    merge(arrayOfItemsToSort, sizeOfArrayOfItemsToSort, leftArray, sizeOfLeftArray, rightArray, sizeOfRightArray); //merge left sub and right sub arrays
 
+    //deallocate allocated memory
     delete[] leftArray;
     delete[] rightArray;
-    
+
   }
 
 }
 
+//performs the merging of both the left and right sub arrays, based on Pseudocode from page 505 of course book
 void MergeSortManager::merge(double* arrayOfItemsToSort, int sizeOfArrayOfItemsToSort, double* leftSubArray, int sizeOfLeftSubArray, double* rightSubArray, int sizeOfRightSubArray) {
 
   int currentIndexInLeftSubArray = 0;

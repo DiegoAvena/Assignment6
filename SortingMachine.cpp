@@ -2,7 +2,7 @@
 
 using namespace std;
 
-//default constructor, used to initialize all values and read the file to create an array:
+//default constructor, can be used to prompt the user for input file if the command line is not being read:
 SortingMachine::SortingMachine() {
 
   arrayOfItemsToSort = NULL;
@@ -19,6 +19,7 @@ SortingMachine::SortingMachine() {
 
 }
 
+//overrided constructor, used when the user provides the name of a file in the command line
 SortingMachine::SortingMachine(string fileName) {
 
   arrayOfItemsToSort = NULL;
@@ -27,6 +28,13 @@ SortingMachine::SortingMachine(string fileName) {
 
   FileInputManager<SortingMachine> inputManager;
 
+  /*
+
+  -this calls the readFile method which in turn calls the
+  readFromFileWithSpecificRules method here which leads the the
+  initialization of the 3 items above
+
+  */
   if (inputManager.readFile(fileName, *this) == false) {
 
     return;
@@ -43,13 +51,18 @@ SortingMachine::SortingMachine(string fileName) {
   cout<<endl;
   cout<<endl;
 
+  //do bubble sort
   BubbleSortManager bubbleSorter;
   bubbleSorter.bubbleSort(arrayOfItemsToSort, numberOfItemsToSort);
 
+  //do insertion sort
   InsertionSortManager insertionSorter;
   insertionSorter.insertionSort(arrayOfItemsToSort, numberOfItemsToSort);
 
+  //do quick sort
   QuickSortManager quickSorter(arrayOfItemsToSort, numberOfItemsToSort);
+
+  //do merge sort
   MergeSortManager mergeSorter(arrayOfItemsToSort, numberOfItemsToSort);
 
 }

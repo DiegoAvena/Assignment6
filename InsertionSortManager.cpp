@@ -2,25 +2,29 @@
 
 using namespace std;
 
+//default constructor
 InsertionSortManager::InsertionSortManager() {
 
 }
 
+//destructor
 InsertionSortManager::~InsertionSortManager() {
 
 }
 
+//performs insertion sort on given array of items
 void InsertionSortManager::insertionSort(double* arrayOfItemsToCopyAndSort, int sizeOfArrayOfItemsToSort) {
 
-  copyArray(arrayOfItemsToCopyAndSort, sizeOfArrayOfItemsToSort);
+  copyArray(arrayOfItemsToCopyAndSort, sizeOfArrayOfItemsToSort); //copy the array of items
 
   cout<<"----------------------------------------------------------------------------------------------------"<<endl;
   cout<<"INSERTION SORT"<<std::endl;
 
-  float startingTime = ((float)clock()) / CLOCKS_PER_SEC;
+  float startingTime = ((float)clock()) / CLOCKS_PER_SEC; //record the start time
 
   cout<<"Time sort started at: "<<startingTime<<"s."<<endl;
 
+  //start insertion sort
   for (int i = 0; i < sizeOfArrayOfItemsToSort; i++) {
 
     double currentValueToInsertIntoCorrectSpot = arrayOfItems[i];
@@ -53,10 +57,12 @@ void InsertionSortManager::insertionSort(double* arrayOfItemsToCopyAndSort, int 
 
   }
 
-  float endingTime = ((float)clock()) / CLOCKS_PER_SEC;
+  float endingTime = ((float)clock()) / CLOCKS_PER_SEC; //record the end time
   cout<<"Time sort ended at: "<<endingTime<<"s."<<endl;
 
-  float timeTaken = endingTime - startingTime;
+  float timeTaken = endingTime - startingTime; //record the amount of time taken
+
+  //report final results
   cout<<"Time sort took is: "<<timeTaken<<"s."<<endl;
   cout<<"The sorted array is: "<<endl;
   printArray(sizeOfArrayOfItemsToSort);

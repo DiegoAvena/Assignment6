@@ -3,18 +3,23 @@
 
 #include <iostream>
 #include "ArrayManager.h"
-#include <time.h>  /* clock_t, clock, CLOCKS_PER_SEC */
+#include <time.h>
 
-//template <typename dataType>
+/*
 
+-Contains the methods needed to perform a bubble sort type of sort. Inherits
+from array manager to use it as an array container and the array methods that will be
+used more than once throughout this program
+
+*/
 class BubbleSortManager: public ArrayManager<double>  {
 
 public:
-  BubbleSortManager();
+  BubbleSortManager(); //default constructor
 
-  ~BubbleSortManager();
+  ~BubbleSortManager(); //destructor
 
-  void bubbleSort(double* arrayOfItemsToCopyAndSort, int sizeOfArrayOfItemsToSort);
+  void bubbleSort(double* arrayOfItemsToCopyAndSort, int sizeOfArrayOfItemsToSort); //contains the bubble sort algorithm
 
 };
 

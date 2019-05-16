@@ -2,14 +2,17 @@
 
 using namespace std;
 
+//default constructor
 FileGenerator::FileGenerator() {
 
 }
 
+//destructor
 FileGenerator::~FileGenerator() {
 
 }
 
+//generates an unsorted text file with
 void FileGenerator::generateUnsortedDataFile(string fileName) {
 
   ofstream fileToWriteTo;
@@ -20,11 +23,11 @@ void FileGenerator::generateUnsortedDataFile(string fileName) {
   cin>>dataSize;
   fileToWriteTo<<dataSize<<endl;
 
-  int randomNumber;
+  double randomNumber;
 
   for (int i = 0; i < dataSize; i++) {
 
-    randomNumber = rand() % dataSize + 1;
+    randomNumber = (double)rand() / (RAND_MAX/dataSize); //how to generate random double values: https://stackoverflow.com/questions/686353/random-float-number-generation
     fileToWriteTo<<randomNumber<<endl;
 
   }
@@ -33,6 +36,7 @@ void FileGenerator::generateUnsortedDataFile(string fileName) {
 
 }
 
+//generates a text file with values ordered by descending order.
 void FileGenerator::generateDescendingOrderDataFile(string fileName) {
 
   ofstream fileToWriteTo;
@@ -43,9 +47,11 @@ void FileGenerator::generateDescendingOrderDataFile(string fileName) {
   cin>>dataSize;
   fileToWriteTo<<dataSize<<endl;
 
+  double number;
   while (dataSize > 0) {
 
-    fileToWriteTo<<dataSize<<endl;
+    number = dataSize;
+    fileToWriteTo<<number<<endl;
     dataSize--;
 
   }
@@ -54,6 +60,7 @@ void FileGenerator::generateDescendingOrderDataFile(string fileName) {
 
 }
 
+//generates a sorted text file.
 void FileGenerator::generateSortedDataFile(string fileName) {
 
   ofstream fileToWriteTo;
@@ -64,14 +71,14 @@ void FileGenerator::generateSortedDataFile(string fileName) {
   cin>>dataSize;
   fileToWriteTo<<dataSize<<endl;
 
-
+  double number; //the double to write
   for (int i = 0; i < dataSize; i++) {
 
-    fileToWriteTo<<i<<endl;
+    number = i;
+    fileToWriteTo<<number<<endl;
 
   }
 
   fileToWriteTo.close();
-
 
 }

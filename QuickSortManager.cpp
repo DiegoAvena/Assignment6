@@ -1,24 +1,27 @@
 #include "QuickSortManager.h"
 using namespace std;
 
+//default constructor
 QuickSortManager::QuickSortManager() {
 
 }
 
+ //constructor, makes a copy of the array to sort and calls the quick sort method with the algorithm
 QuickSortManager::QuickSortManager(double* arrayOfItemsToCopyAndSort, int sizeOfArrayOfItemsToSort) {
 
-  copyArray(arrayOfItemsToCopyAndSort, sizeOfArrayOfItemsToSort);
+  copyArray(arrayOfItemsToCopyAndSort, sizeOfArrayOfItemsToSort); //make a copy of the array of items to be sorted
   cout<<"----------------------------------------------------------------------------------------------------"<<endl;
   cout<<"QUICK-SORT"<<endl;
 
-  float startingTime = ((float)clock()) / CLOCKS_PER_SEC;
+  float startingTime = ((float)clock()) / CLOCKS_PER_SEC; //record the start time
   cout<<"Time sort started at: "<<startingTime<<"s."<<endl;
 
-  QuickSort(arrayOfItems, 0, sizeOfArrayOfItemsToSort - 1);
+  QuickSort(arrayOfItems, 0, sizeOfArrayOfItemsToSort - 1); //begin quick sort
 
-  float endingTime = ((float)clock()) / CLOCKS_PER_SEC;
+  float endingTime = ((float)clock()) / CLOCKS_PER_SEC; //record end time
   cout<<"Time sort ended at: "<<endingTime<<"s"<<endl;
 
+  //report the results:
   float timeTaken = endingTime - startingTime;
   cout<<"Time sort took is: "<<timeTaken<<"s."<<endl;
   cout<<"The sorted array is: "<<endl;
@@ -30,6 +33,7 @@ QuickSortManager::QuickSortManager(double* arrayOfItemsToCopyAndSort, int sizeOf
 
 }
 
+//destructor
 QuickSortManager::~QuickSortManager() {
 
 }
@@ -79,127 +83,5 @@ void QuickSortManager::QuickSort(double* arrayOfItemsToSort, int minIndex, int m
     QuickSort(arrayOfItemsToSort, partitionIndex + 1, maxIndex);
 
   }
-
-
-  /*if (sizeOfArrayOfItemsToSort <= 1) {
-
-    //there is nothing to sort because either there or no items or there is only 1 item
-    return;
-
-  }
-
-  double pivot = arrayOfItemsToSort[sizeOfArrayOfItemsToSort - 1]; //set pivot to be last element of the array
-
-  double* leftContainer;
-  double* middleContainer;
-  double* rightContainer;
-
-  int sizeOfLeftContainer = 0;
-  int sizeOfRightContainer = 0;
-  int sizeOfMiddleContainer = 0;
-
-  int currentIndexInLeftContainer = 0;
-  int currentIndexInRightContainer = 0;
-  int currentIndexInMiddleContainer = 0;
-
-  int currentIndexInArrayOfItemsToSort = (sizeOfArrayOfItemsToSort - 1);
-
-  for (int i = 0; i < sizeOfArrayOfItemsToSort; i++) {
-
-    if (arrayOfItemsToSort[i] < pivot ) {
-
-      sizeOfLeftContainer++;
-
-    }
-
-    else if (arrayOfItemsToSort[i] > pivot) {
-
-      sizeOfRightContainer++;
-
-    }
-    else {
-
-      sizeOfMiddleContainer++;
-
-    }
-
-  }
-
-  //int currentIndexInLeftContainer = sizeOfLeftContainer - 1;
-  //int currentIndexInRightContainer = sizeOfRightContainer - 1;
-  //int currentIndexInMiddleContainer = sizeOfMiddleContainer - 1;
-
-  leftContainer = new double[sizeOfLeftContainer];
-  rightContainer = new double[sizeOfRightContainer];
-  middleContainer = new double[sizeOfMiddleContainer];
-
-  while (sizeOfArrayOfItemsToSort != 0) {
-
-    //still items to split into left, middle, or right container:
-    if (arrayOfItemsToSort[currentIndexInArrayOfItemsToSort] < pivot) {
-
-      //store at back of left container, element smaller than pivot:
-      leftContainer[currentIndexInLeftContainer] = arrayOfItemsToSort[currentIndexInArrayOfItemsToSort];
-      currentIndexInLeftContainer++;
-
-    }
-    else if (arrayOfItemsToSort[currentIndexInArrayOfItemsToSort] == pivot) {
-
-      //store at back of middle container, element equals the pivot:
-      middleContainer[currentIndexInMiddleContainer] = arrayOfItemsToSort[currentIndexInArrayOfItemsToSort];
-      currentIndexInMiddleContainer++;
-
-    }
-    else {
-
-      //store at back of right container, element larger than pivot:
-      rightContainer[currentIndexInRightContainer] = arrayOfItemsToSort[currentIndexInArrayOfItemsToSort];
-      currentIndexInRightContainer++;
-
-    }
-
-    //""Remove" item from array of items to sort:"
-    currentIndexInArrayOfItemsToSort--;
-    sizeOfArrayOfItemsToSort--;
-
-  }
-
-  QuickSort(leftContainer, sizeOfLeftContainer);
-  QuickSort(rightContainer, sizeOfRightContainer);
-
-  currentIndexInArrayOfItemsToSort = 0;
-
-  while (sizeOfLeftContainer != 0) {
-
-    arrayOfItemsToSort[currentIndexInArrayOfItemsToSort] = leftContainer[currentIndexInLeftContainer];
-    currentIndexInLeftContainer++;
-    sizeOfLeftContainer--;
-    currentIndexInArrayOfItemsToSort++;
-
-  }
-
-  delete[] leftContainer;
-
-  while (sizeOfMiddleContainer != 0) {
-
-    arrayOfItemsToSort[currentIndexInArrayOfItemsToSort] = middleContainer[currentIndexInMiddleContainer];
-    currentIndexInMiddleContainer++;
-    sizeOfMiddleContainer--;
-    currentIndexInArrayOfItemsToSort++;
-
-  }
-
-  delete[] middleContainer;
-
-  while (sizeOfRightContainer != 0) {
-
-    arrayOfItemsToSort[currentIndexInArrayOfItemsToSort] = rightContainer[currentIndexInRightContainer];
-    currentIndexInRightContainer++;
-    sizeOfRightContainer--;
-    currentIndexInArrayOfItemsToSort++;
-
-  }
-
-  delete[] rightContainer;*/
 
 }
