@@ -20,4 +20,5 @@ REFERENCES:
 4.) For visual of insertion sort: page 111 of Data Structures and Algorithms by Michael T. Goodrich et al., 2nd edition
 
 5.) For help with quick sort: pages 500-511 of Data Structures and Algorithms by Michael T. Goodrich et al., 2nd edition
+
 ------------------------------------------------------------------------------------------------------------------------
