@@ -1,4 +1,4 @@
-# Assignment6
+# Sorting Algorithm Performance Tester
 
 ------------------------------------------------------------------------------------------------------------------------
 For this program, the following algorithms have been implemented and tested for their speeds using several data samples:
