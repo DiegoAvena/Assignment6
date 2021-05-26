@@ -1,15 +1,20 @@
 # Sorting Algorithm Performance Tester
 
 ------------------------------------------------------------------------------------------------------------------------
+## Overview
+
 For this program, the following algorithms have been implemented and tested for their speeds using several data samples:
 
 1.) Bubble Sort
+
 2.) Insertion Sort
+
 3.) Quick Sort
+
 4.) Merge Sort
 
 ------------------------------------------------------------------------------------------------------------------------
-REFERENCES:
+## REFERENCES:
 
 1.) For clock(), http://www.cplusplus.com/reference/ctime/clock/
 
