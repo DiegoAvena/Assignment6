@@ -14,6 +14,15 @@ For this program, the following algorithms have been implemented and tested for 
 4.) Merge Sort
 
 ------------------------------------------------------------------------------------------------------------------------
+## How to run: 
+
+1.) Compile with: Make all 
+
+2.) Run with: Make run file=[name of a file to sort data for]
+
+3.) To remove compiled code files, do: make realclean
+
+------------------------------------------------------------------------------------------------------------------------
 ## REFERENCES:
 
 1.) For clock(), http://www.cplusplus.com/reference/ctime/clock/
