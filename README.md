@@ -1,5 +1,9 @@
 # Sorting Algorithm Performance Tester
 
+![SortingAlgorithmPerformanceTesterIcon](https://user-images.githubusercontent.com/43594702/119729386-7624ec80-be29-11eb-89f6-32fc7c36c376.png)
+
+[See it in action!](https://www.youtube.com/watch?v=ivEWDpP1VRE)
+
 ------------------------------------------------------------------------------------------------------------------------
 ## Overview
 
