@@ -1,5 +1,9 @@
 # Sorting Algorithm Performance Tester
 
+![SortingAlgorithmPerformanceTesterIcon](https://user-images.githubusercontent.com/43594702/119729386-7624ec80-be29-11eb-89f6-32fc7c36c376.png)
+
+[See it in action!](https://www.youtube.com/watch?v=ivEWDpP1VRE)
+
 ------------------------------------------------------------------------------------------------------------------------
 ## Overview
 
@@ -12,6 +16,15 @@ For this program, the following algorithms have been implemented and tested for 
 3.) Quick Sort
 
 4.) Merge Sort
+
+------------------------------------------------------------------------------------------------------------------------
+## How to run: 
+
+1.) Compile with: Make all 
+
+2.) Run with: Make run file=[name of a file to sort data for]
+
+3.) To remove compiled code files, do: make realclean
 
 ------------------------------------------------------------------------------------------------------------------------
 ## REFERENCES:
