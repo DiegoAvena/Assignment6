@@ -1,6 +1,6 @@
 # Sorting Algorithm Performance Tester
 
-![SortingAlgorithmPerformanceTesterIcon](https://user-images.githubusercontent.com/43594702/119729386-7624ec80-be29-11eb-89f6-32fc7c36c376.png)
+![sortingAlgorithmPerformanceTester](https://user-images.githubusercontent.com/43594702/119754880-ee090c00-be55-11eb-80f6-5f62c8bd143d.png)
 
 [See it in action!](https://www.youtube.com/watch?v=ivEWDpP1VRE)
 
